@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>الشيخ أسامه | رقية وعلاج | آل بيت النبي ﷺ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    background: linear-gradient(120deg, #000000, #0d0d0d);
+    color:white;
+    font-family:Tahoma;
+    direction:rtl;
+    scroll-behavior:smooth;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 1s ease;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    color:gold;
+    font-size:55px;
+    text-shadow:0 0 30px gold;
+    animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+    from{text-shadow:0 0 10px gold}
+    to{text-shadow:0 0 40px gold}
+}
+
+header p{
+    color:#ccc;
+    font-size:22px;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:gold;
+    text-align:center;
+    font-size:34px;
+    margin-bottom:25px;
+    text-shadow:0 0 10px gold;
+    position:relative;
+}
+h2::before{
+    content:'★';
+    position:absolute;
+    left:-25px;
+    color:gold;
+}
+
+.box{
+    background:#0b0b0b;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:30px;
+    margin:20px 0;
+    text-align:center;
+    font-size:20px;
+    line-height:2;
+    box-shadow:0 0 25px rgba(212,175,55,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.box:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 35px rgba(212,175,55,0.4);
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:15px 35px;
+    border:2px solid gold;
+    background:none;
+    color:gold;
+    font-size:20px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+.btn:hover{
+    background: linear-gradient(45deg, #ffd700, #ffec8b);
+    color:black;
+    transform:scale(1.05);
+}
+
+.counter{
+    text-align:center;
+    font-size:28px;
+    color:#f5e7a1;
+    margin-top:15px;
+}
+
+.quran-img{
+    display:block;
+    max-width:420px;
+    height:auto;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(212,175,55,0.35);
+    display:block;
+    margin:30px auto;
+}
+
+/* تعليقات */
+.comment-box input,.comment-box textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    background:black;
+    border:1px solid gold;
+    color:white;
+    border-radius:8px;
+}
+.comment{
+    border-bottom:1px solid #333;
+    padding:10px 0;
+}
+
+#topBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:gold;
+    color:black;
+    border:none;
+    padding:12px 18px;
+    font-size:18px;
+    border-radius:12px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+}
+#topBtn:hover{
+    transform:scale(1.1);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade">
+    <h1>الشيخ أسامه</h1>
+    <p>رقية وعلاج بالقرآن الكريم – محبة آل بيت النبي ﷺ</p>
+</header>
+
+<section class="fade">
+    <img class="quran-img"
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Quran_Karim.svg"
+    alt="القرآن الكريم">
+</section>
+
+<section class="fade">
+    <h2>من هم آل بيت النبي ﷺ</h2>
+    <div class="box">سيدنا علي بن أبي طالب رضي الله عنه</div>
+    <div class="box">السيدة فاطمة الزهراء رضي الله عنها</div>
+    <div class="box">الإمام الحسن رضي الله عنه</div>
+    <div class="box">الإمام الحسين رضي الله عنه</div>
+    <div class="box">السيدة زينب رضي الله عنها</div>
+</section>
+
+<section class="fade">
+    <h2>الصلاة على النبي ﷺ</h2>
+    <div style="text-align:center">
+        <button class="btn" onclick="increase()">➕ زيادة</button>
+        <button class="btn" onclick="resetCount()">🔄 تصفير</button>
+    </div>
+    <div class="counter">
+        عدد الصلوات: <span id="count">0</span>
+    </div>
+</section>
+
+<section class="fade">
+    <h2>الرُقية الشرعية</h2>
+    <div class="box">
+        <b>الرُقية من الحسد:</b> قراءة آيات الحسد والعيون <br><br>
+        <b>الرُقية من العين:</b> آيات للحفظ والوقاية <br><br>
+        <b>الرُقية من السحر:</b> أدعية وآيات تحصين النفس
+    </div>
+</section>
+
+<section class="fade">
+    <h2>أدعية</h2>
+    <div class="box">اللهم اشفِ كل مريض وفرّج كل هم</div>
+    <div class="box">اللهم اجعل القرآن ربيع قلوبنا</div>
+</section>
+
+<section class="fade">
+    <h2>المحبة</h2>
+    <div class="box">
+        نُحب آل بيت النبي ﷺ ونتقرب إلى الله بمحبتهم
+    </div>
+</section>
+
+<section class="fade">
+    <h2>تابع الشيخ أسامه على تيك توك</h2>
+    <iframe
+        src="https://www.tiktok.com/embed/@osamaahmed8487"
+        width="325" height="575"
+        frameborder="0"
+        allowfullscreen
+        style="display:block;margin:auto">
+    </iframe>
+    <a class="btn" href="https://www.tiktok.com/@osamaahmed8487" target="_blank">
+        فتح صفحة تيك توك
+    </a>
+</section>
+
+<section class="fade">
+    <h2>التواصل</h2>
+    <p style="text-align:center;font-size:22px;color:gold">
+        01006596174
+    </p>
+    <a class="btn" href="https://wa.me/201006596174" target="_blank">
+        التواصل عبر واتساب
+    </a>
+</section>
+
+<section class="fade">
+    <h2>آراء الزوّار</h2>
+    <div class="comment-box">
+        <input id="name" placeholder="اسمك">
+        <textarea id="text" placeholder="اكتب رأيك"></textarea>
+        <button class="btn" onclick="addComment()">إرسال</button>
+    </div>
+    <div id="comments"></div>
+</section>
+
+<footer class="fade">
+    هذا الموقع صدقة جارية – اللهم تقبل
+</footer>
+
+<button id="topBtn" onclick="topFunction()">⬆ أعلى</button>
+
+<script>
+// Fade in عند النزول
+window.addEventListener('scroll',()=>{
+    document.querySelectorAll('.fade').forEach(el=>{
+        let rect=el.getBoundingClientRect();
+        if(rect.top<window.innerHeight-100){el.classList.add('show')}
+    });
+});
+
+// عداد الصلاة
+let count = localStorage.getItem("count") || 0;
+document.getElementById("count").innerText = count;
+function increase(){
+    count++;
+    localStorage.setItem("count", count);
+    document.getElementById("count").innerText = count;
+}
+function resetCount(){
+    count=0;
+    localStorage.setItem("count", count);
+    document.getElementById("count").innerText = count;
+}
+
+// تعليقات الزوار
+function addComment(){
+    let n=name.value;
+    let t=text.value;
+    if(n && t){
+        let c=JSON.parse(localStorage.getItem("comments")||"[]");
+        c.push({n,t});
+        localStorage.setItem("comments",JSON.stringify(c));
+        show();
+        name.value="";
+        text.value="";
+    }
+}
+function show(){
+    let c=JSON.parse(localStorage.getItem("comments")||"[]");
+    comments.innerHTML="";
+    c.forEach(x=>{
+        comments.innerHTML += `<div class="comment"><b>${x.n}</b><br>${x.t}</div>`;
+    });
+}
+show();
+
+// زر العودة لأعلى
+let topBtn=document.getElementById("topBtn");
+window.onscroll=function(){
+    if(document.body.scrollTop>100 || document.documentElement.scrollTop>100){
+        topBtn.style.display="block";
+    }else{
+        topBtn.style.display="none";
+    }
+};
+function topFunction(){
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>

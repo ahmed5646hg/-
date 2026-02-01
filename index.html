@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta name="description" content="الشيخ أسامه رقية وعلاج بالقرآن الكريم، علاج السحر والعين والحسد، تواصل واتساب">
-<meta name="keywords" content="الشيخ اسامه, رقية شرعية, علاج السحر, علاج العين, رقية وعلاج">
-
 <meta charset="UTF-8">
-<title>الشيخ أسامه | رقية وعلاج  ﷺ</title>
+<title>الشيخ أسامه | رقية وعلاج | ﷺ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -47,7 +44,6 @@ header h1{
 header p{
     color:#ccc;
     font-size:22px;
-    margin:5px 0;
 }
 
 section{
@@ -119,6 +115,7 @@ h2::before{
     height:auto;
     border-radius:15px;
     box-shadow:0 0 25px rgba(212,175,55,0.35);
+    display:block;
     margin:30px auto;
 }
 
@@ -135,6 +132,20 @@ h2::before{
 .comment{
     border-bottom:1px solid #333;
     padding:10px 0;
+}
+
+#welcomeMsg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:gold;
+    color:black;
+    text-align:center;
+    padding:15px;
+    font-size:20px;
+    z-index:1000;
+    display:none;
 }
 
 #topBtn{
@@ -166,13 +177,15 @@ footer{
 
 <body>
 
+<!-- رسالة ترحيبية -->
+<div id="welcomeMsg">
+    أهلاً بك في موقع الشيخ أسامه – رقية وعلاج بالقرآن الكريم
+    <span style="cursor:pointer; float:right; margin-right:15px;" onclick="this.parentElement.style.display='none'">✖</span>
+</div>
+
 <header class="fade">
     <h1>الشيخ أسامه</h1>
     <p>رقية وعلاج بالقرآن الكريم – محبة آل بيت النبي ﷺ</p>
-    <p style="margin-top:15px;font-size:20px;color:#f5e7a1;line-height:1.8">
-        الشيخ أسامه علاج السحر ولبس الجن<br>
-        علاج على التليفون بمقابل مادي
-    </p>
 </header>
 
 <section class="fade">
@@ -225,13 +238,7 @@ footer{
 
 <section class="fade">
     <h2>تابع الشيخ أسامه على تيك توك</h2>
-    <iframe
-        src="https://www.tiktok.com/embed/@osamaahmed8487"
-        width="325" height="575"
-        frameborder="0"
-        allowfullscreen
-        style="display:block;margin:auto">
-    </iframe>
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="تيك توك" width="120" style="display:block;margin:10px auto;">
     <a class="btn" href="https://www.tiktok.com/@osamaahmed8487" target="_blank">
         فتح صفحة تيك توك
     </a>
@@ -245,7 +252,15 @@ footer{
     <a class="btn" href="https://wa.me/201006596174" target="_blank">
         التواصل عبر واتساب
     </a>
+    <div style="text-align:center; margin:30px 0;">
+        <a class="btn" href="https://wa.me/201006596174" target="_blank">
+            📞 اتصل الآن
+        </a>
+    </div>
 </section>
+<p style="text-align:center; font-size:20px; color:#f5e7a1; margin-top:15px;">
+    الشيخ أسامه علاج السحر ولبس الجن علاج على التليفون بمقابل مادي
+</p>
 
 <section class="fade">
     <h2>آراء الزوّار</h2>
@@ -270,6 +285,13 @@ window.addEventListener('scroll',()=>{
         let rect=el.getBoundingClientRect();
         if(rect.top<window.innerHeight-100){el.classList.add('show')}
     });
+});
+
+// الرسالة الترحيبية
+window.addEventListener('load', () => {
+    let msg = document.getElementById('welcomeMsg');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 6000);
 });
 
 // عداد الصلاة
